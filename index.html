@@ -1,31 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HTML website</title>
-     <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Mastery - Learn HTML from Scratch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <header>
+        <div class="logo">HTML Mastery</div>
+        <nav>
+            <ul>
+                <li><a href="#learn">Learn</a></li>
+                <li><a href="#practice">Practice</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#" id="theme-toggle"><i class="fas fa-moon"></i></a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="sidebar">
-  <a href="slidebar/home.html">HTML HOME</a>
-  <a href="slidebar/introdution.html">HTML Introduction</a>
-  <a href="#">HTML Editors</a>
-  <a href="#">HTML Basic</a>
-  <a href="#">HTML Elements</a>
-  <a href="#">HTML Attributes</a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Master HTML the Right Way</h1>
+                <p>Interactive lessons, hands-on practice, and expert guidance to help you become an HTML pro.</p>
+                <button class="cta-button">Start Learning Now</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500x300" alt="HTML code example" class="hero-img">
+            </div>
+        </section>
 
-</div>
+        <section id="learn" class="learning-path">
+            <h2>Learning Path</h2>
+            <div class="path-container">
+                <div class="path-item">
+                    <div class="path-icon"><i class="fas fa-code"></i></div>
+                    <h3>HTML Fundamentals</h3>
+                    <ul>
+                        <li>Document Structure</li>
+                        <li>Text Formatting</li>
+                        <li>Lists & Tables</li>
+                    </ul>
+                    <button class="path-button">Start Module</button>
+                </div>
+                <div class="path-item">
+                    <div class="path-icon"><i class="fas fa-window-maximize"></i></div>
+                    <h3>Forms & Input</h3>
+                    <ul>
+                        <li>Form Elements</li>
+                        <li>Input Types</li>
+                        <li>Form Validation</li>
+                    </ul>
+                    <button class="path-button">Start Module</button>
+                </div>
+                <div class="path-item">
+                    <div class="path-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Semantic HTML</h3>
+                    <ul>
+                        <li>Sectioning Elements</li>
+                        <li>Accessibility</li>
+                        <li>SEO Basics</li>
+                    </ul>
+                    <button class="path-button">Start Module</button>
+                </div>
+            </div>
+        </section>
 
-<div class="main">
-  <h1>HTML Tutorial</h1>
-  <p>Learn HTML</p>
-  <p>HTML is the standard markup language for Web pages.</p>
-  <p>With HTML you can create your own Website.</p>
-  <p>HTML is easy to learn - You will enjoy it!</p>
-  <a class="button" href="slidebar/home.html">Start learning HTML</a>
-</div>
+        <section id="practice" class="practice-section">
+            <h2>Interactive Practice</h2>
+            <div class="practice-container">
+                <div class="code-editor">
+                    <div class="editor-toolbar">
+                        <span>HTML Editor</span>
+                        <button id="run-code"><i class="fas fa-play"></i> Run</button>
+                    </div>
+                    <textarea id="html-editor" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Practice Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;Edit this code to practice HTML&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                </div>
+                <div class="output-preview">
+                    <div class="preview-toolbar">
+                        <span>Live Preview</span>
+                    </div>
+                    <iframe id="preview-output"></iframe>
+                </div>
+            </div>
+        </section>
 
+        <section id="resources" class="resources-section">
+            <h2>Learning Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-book"></i></div>
+                    <h3>Cheat Sheets</h3>
+                    <p>Quick reference guides for all HTML tags and attributes</p>
+                    <a href="#" class="resource-link">Download PDF</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-video"></i></div>
+                    <h3>Video Tutorials</h3>
+                    <p>Step-by-step video guides for visual learners</p>
+                    <a href="#" class="resource-link">Watch Now</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-tasks"></i></div>
+                    <h3>Exercises</h3>
+                    <p>Practice problems with solutions</p>
+                    <a href="#" class="resource-link">Try Exercises</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Projects</h3>
+                    <p>Real-world project ideas with templates</p>
+                    <a href="#" class="resource-link">View Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="community-section">
+            <h2>Join Our Community</h2>
+            <div class="community-container">
+                <div class="community-feature">
+                    <i class="fas fa-comments"></i>
+                    <h3>Discussion Forum</h3>
+                    <p>Ask questions and help others learn</p>
+                    <button class="community-button">Join Discussions</button>
+                </div>
+                <div class="community-feature">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Code Sharing</h3>
+                    <p>Share your projects and get feedback</p>
+                    <button class="community-button">Share Code</button>
+                </div>
+                <div class="community-feature">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Mentorship</h3>
+                    <p>Get guidance from experienced developers</p>
+                    <button class="community-button">Find a Mentor</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>HTML Mastery</h3>
+                <p>The best place to learn HTML from scratch</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#learn">Learn</a></li>
+                    <li><a href="#practice">Practice</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab  twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 HTML Mastery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
