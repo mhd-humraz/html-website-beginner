@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Fundamentals | HTML Mastery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #7209b7;
+            --accent-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --text-color: #212529;
+            --bg-color: #ffffff;
+            --card-bg: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin-top: 2rem;
+        }
+
+        .module-nav {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .module-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .module-nav a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .module-nav a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .content-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .code-block {
+            background-color: var(--dark-color);
+            color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .example {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            background-color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--light-color);
+        }
+
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .tip {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0dcaf0;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HTML Fundamentals</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="module-nav">
+            <a href="#document-structure" class="active">Document Structure</a>
+            <a href="#text-formatting">Text Formatting</a>
+            <a href="#lists">Lists</a>
+            <a href="#tables">Tables</a>
+        </div>
+
+        <section id="document-structure" class="content-card">
+            <h2>Document Structure</h2>
+            <p>Every HTML document has a basic structure that forms the foundation of web pages.</p>
+            
+            <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Page content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </div>
+
+            <h3>Key Elements:</h3>
+            <ul>
+                <li><strong>&lt;!DOCTYPE html&gt;</strong> - Declares the document type and HTML version</li>
+                <li><strong>&lt;html&gt;</strong> - The root element of an HTML page</li>
+                <li><strong>&lt;head&gt;</strong> - Contains meta information about the document</li>
+                <li><strong>&lt;body&gt;</strong> - Contains the visible page content</li>
+            </ul>
+
+            <div class="note">
+                <strong>Note:</strong> Always include the lang attribute in the &lt;html&gt; tag for accessibility and SEO.
+            </div>
+        </section>
+
+        <section id="text-formatting" class="content-card">
+            <h2>Text Formatting</h2>
+            <p>HTML provides various elements for formatting text:</p>
+            
+            <div class="example">
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <p>This is a normal paragraph.</p>
+                <p><strong>This text is bold.</strong> <em>This text is italic.</em></p>
+                <p><u>Underlined text</u> and <s>strikethrough text</s></p>
+                <p>This is <sup>superscript</sup> and this is <sub>subscript</sub></p>
+                <p><small>Small text</small> and <mark>highlighted text</mark></p>
+            </div>
+
+            <div class="code-block">
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;p&gt;This is a normal paragraph.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This text is bold.&lt;/strong&gt; &lt;em&gt;This text is italic.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Underlined text&lt;/u&gt; and &lt;s&gt;strikethrough text&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;This is &lt;sup&gt;superscript&lt;/sup&gt; and this is &lt;sub&gt;subscript&lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Small text&lt;/small&gt; and &lt;mark&gt;highlighted text&lt;/mark&gt;&lt;/p&gt;
+            </div>
+
+            <div class="tip">
+                <strong>Tip:</strong> Use semantic elements like &lt;strong&gt; instead of &lt;b&gt; for bold text, as it carries more meaning.
+            </div>
+        </section>
+
+        <section id="lists" class="content-card">
+            <h2>Lists</h2>
+            <p>HTML supports ordered, unordered, and description lists:</p>
+            
+            <div class="example">
+                <h3>Unordered List</h3>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2
+                        <ul>
+                            <li>Nested item 1</li>
+                            <li>Nested item 2</li>
+                        </ul>
+                    </li>
+                    <li>Item 3</li>
+                </ul>
+
+                <h3>Ordered List</h3>
+                <ol>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ol>
+
+                <h3>Description List</h3>
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>HyperText Markup Language</dd>
+                    <dt>CSS</dt>
+                    <dd>Cascading Style Sheets</dd>
+                </dl>
+            </div>
+
+            <div class="code-block">
+&lt;!-- Unordered List --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2
+        &lt;ul&gt;
+            &lt;li&gt;Nested item 1&lt;/li&gt;
+            &lt;li&gt;Nested item 2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered List --&gt;
+&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Description List --&gt;
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;
+            </div>
+        </section>
+
+        <section id="tables" class="content-card">
+            <h2>Tables</h2>
+            <p>Tables are used to display data in rows and columns:</p>
+            
+            <div class="example">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>Admin</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>jane@example.com</td>
+                            <td>Editor</td>
+                        </tr>
+                        <tr>
+                            <td>Bob Johnson</td>
+                            <td>bob@example.com</td>
+                            <td>Subscriber</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="code-block">
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Email&lt;/th&gt;
+            &lt;th&gt;Role&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John Doe&lt;/td&gt;
+            &lt;td&gt;john@example.com&lt;/td&gt;
+            &lt;td&gt;Admin&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Jane Smith&lt;/td&gt;
+            <td>jane@example.com&lt;/td&gt;
+            &lt;td&gt;Editor&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bob Johnson&lt;/td&gt;
+            &lt;td&gt;bob@example.com&lt;/td&gt;
+            &lt;td&gt;Subscriber&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </div>
+
+            <h3>Table Accessibility</h3>
+            <p>For better accessibility:</p>
+            <ul>
+                <li>Always use <code>&lt;th&gt;</code> for header cells</li>
+                <li>Use <code>scope="col"</code> or <code>scope="row"</code> on <code>&lt;th&gt;</code> elements</li>
+                <li>Consider adding a <code>&lt;caption&gt;</code> to describe the table</li>
+            </ul>
+
+            <div class="note">
+                <strong>Note:</strong> Tables should only be used for tabular data, not for page layout.
+            </div>
+        </section>
+    </div>
+</body>
+</html>
