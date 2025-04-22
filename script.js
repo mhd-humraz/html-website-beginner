@@ -61,12 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Path module buttons
-    document.querySelectorAll('.path-button').forEach(button => {
-        button.addEventListener('click', function() {
-            alert('Module starting soon! This would navigate to the selected learning module.');
-        });
-    });
+    
     
     // Community buttons
     document.querySelectorAll('.community-button').forEach(button => {
