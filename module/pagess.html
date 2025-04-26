@@ -246,9 +246,18 @@
         </nav>
 
         <section id="form-elements" class="content-card">
-            <h2>Form Elements</h2>
-            <p>HTML provides a variety of form elements to collect different types of user input. Each serves a specific purpose in form creation.</p>
-            
+          <div class="section">
+    <h2>Form Elements</h2>
+    <p>Form elements are the building blocks of a form. Some common elements include:</p>
+    <ul>
+      <li><code>&lt;input&gt;</code> - for text fields, checkboxes, radio buttons, etc.</li>
+      <li><code>&lt;textarea&gt;</code> - for multiline text input.</li>
+      <li><code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> - for dropdown lists.</li>
+      <li><code>&lt;button&gt;</code> - for clickable buttons.</li>
+      <li><code>&lt;label&gt;</code> - for defining labels for inputs.</li>
+    </ul>
+  </div>
+
             <div class="example">
                 <form id="basic-form">
                     <div class="input-row">
@@ -372,6 +381,17 @@
         <section id="input-types" class="content-card">
             <h2>Input Types</h2>
             <p>HTML5 introduced specialized input types that provide better user experience and data validation.</p>
+          <p>The <code>type</code> attribute in the <code>&lt;input&gt;</code> element specifies what kind of input is expected:</p>
+    <ul>
+      <li><code>text</code> - Single line of text</li>
+      <li><code>email</code> - Email address (with basic validation)</li>
+      <li><code>password</code> - Password input (hides text)</li>
+      <li><code>number</code> - Numeric input</li>
+      <li><code>date</code> - Date picker</li>
+      <li><code>checkbox</code> - Checkbox input</li>
+      <li><code>radio</code> - Radio button</li>
+      <li><code>file</code> - File upload</li>
+    </ul>
             
             <div class="example">
                 <form id="advanced-form">
@@ -465,6 +485,55 @@
     
     &lt;button type="submit"&gt;Submit Details&lt;/button&gt;<br>
 &lt;/form &gt;<br>
+            </div>
+        </section>
+      <div class="section">
+    <h2>Form Validation</h2>
+    <p>Form validation ensures users fill out form fields correctly before submitting. HTML provides basic validation:</p>
+    <ul>
+      <li><code>required</code> - Makes the field mandatory</li>
+      <li><code>minlength</code> and <code>maxlength</code> - Controls the length of input</li>
+      <li><code>pattern</code> - Allows custom regular expression validation</li>
+      <li><code>type</code> - Automatically validates based on input type (e.g., email format)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Example Form</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" minlength="6" required>
+
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate">
+
+      <label>Gender:</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
+
+      <label for="hobbies">Hobbies:</label>
+      <input type="checkbox" id="hobby1" name="hobby" value="sports">
+      <label for="hobby1">Sports</label>
+      <input type="checkbox" id="hobby2" name="hobby" value="music">
+      <label for="hobby2">Music</label>
+
+      <label for="file">Upload your file:</label>
+      <input type="file" id="file" name="file">
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
  </body>
 </html>
 
