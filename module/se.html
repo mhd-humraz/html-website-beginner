@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A mini tutorial on Semantic HTML covering sectioning elements, accessibility, and SEO basics">
+    <title>Semantic HTML Tutorial | Sectioning, Accessibility & SEO</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            main {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        
+        section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+            margin-left: 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .tip {
+            background-color: #e8f4fc;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 1rem 0;
+        }
+        
+        .warning {
+            background-color: #fde8e8;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid var(--accent-color);
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Semantic HTML Tutorial</h1>
+        <p>Learn how to create meaningful, accessible, and SEO-friendly web pages</p>
+    </header>
+    
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="#sectioning">Sectioning Elements</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
+            <li><a href="#seo">SEO Basics</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="sectioning">
+            <h2>Sectioning Elements</h2>
+            
+            <article>
+                <h3>What are Semantic Sectioning Elements?</h3>
+                <p>Semantic HTML5 sectioning elements provide meaning to both browsers and developers about the structure of content.</p>
+                
+                <h4>Key Sectioning Elements:</h4>
+                <ul>
+                    <li><code>&lt;header&gt;</code> - Introductory content or navigation</li>
+                    <li><code>&lt;nav&gt;</code> - Navigation links</li>
+                    <li><code>&lt;main&gt;</code> - Dominant content of the document</li>
+                    <li><code>&lt;article&gt;</code> - Self-contained composition</li>
+                    <li><code>&lt;section&gt;</code> - Thematic grouping of content</li>
+                    <li><code>&lt;aside&gt;</code> - Content indirectly related to main content</li>
+                    <li><code>&lt;footer&gt;</code> - Footer for its nearest ancestor</li>
+                </ul>
+                
+                <div class="tip">
+                    <h4>Best Practice:</h4>
+                    <p>Use <code>&lt;main&gt;</code> only once per page, as it represents the primary content.</p>
+                </div>
+                
+                <h3>Example Structure</h3>
+                <pre><code>&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Page Title&lt;/h1&gt;
+        &lt;nav&gt;...&lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Article Title&lt;/h2&gt;
+            &lt;section&gt;
+                &lt;h3&gt;Section Heading&lt;/h3&gt;
+                &lt;p&gt;Content...&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h2&gt;Related Info&lt;/h2&gt;
+            &lt;p&gt;Side content...&lt;/p&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Copyright info&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+            </article>
+        </section>
+        
+        <section id="accessibility">
+            <h2>Accessibility</h2>
+            
+            <article>
+                <h3>Why Semantic HTML Matters for Accessibility</h3>
+                <p>Semantic HTML provides crucial information to assistive technologies like screen readers, helping users with disabilities navigate and understand your content.</p>
+                
+                <h4>Key Accessibility Features:</h4>
+                <ul>
+                    <li><strong>Landmark roles:</strong> Sectioning elements automatically create landmarks that screen readers can navigate</li>
+                    <li><strong>Heading hierarchy:</strong> Proper use of <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> creates a document outline</li>
+                    <li><strong>Alternative text:</strong> <code>alt</code> attributes for images</li>
+                    <li><strong>ARIA attributes:</strong> Additional accessibility information when needed</li>
+                </ul>
+                
+                <div class="warning">
+                    <h4>Common Mistake:</h4>
+                    <p>Avoid using <code>&lt;div&gt;</code> for everything. Semantic elements provide built-in accessibility features that divs lack.</p>
+                </div>
+                
+                <h3>Accessibility Checklist</h3>
+                <ol>
+                    <li>Use proper heading structure (h1-h6 in order)</li>
+                    <li>Include alt text for meaningful images</li>
+                    <li>Ensure all interactive elements are keyboard accessible</li>
+                    <li>Use semantic elements instead of divs when appropriate</li>
+                    <li>Provide text alternatives for non-text content</li>
+                    <li>Ensure sufficient color contrast</li>
+                    <li>Use ARIA landmarks when needed</li>
+                </ol>
+                
+                <h3>ARIA Landmark Example</h3>
+                <pre><code>&lt;nav aria-label="Main navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </article>
+        </section>
+        
+        <section id="seo">
+            <h2>SEO Basics</h2>
+            
+            <article>
+                <h3>How Semantic HTML Helps SEO</h3>
+                <p>Search engines use semantic markup to better understand your content's structure and meaning, which can improve your rankings.</p>
+                
+                <h4>SEO Benefits of Semantic HTML:</h4>
+                <ul>
+                    <li>Clear content hierarchy helps search engines understand your page</li>
+                    <li>Proper heading structure indicates content importance</li>
+                    <li>Semantic elements can be weighted differently in search algorithms</li>
+                    <li>Improved accessibility often correlates with better SEO</li>
+                </ul>
+                
+                <div class="tip">
+                    <h4>Pro Tip:</h4>
+                    <p>Content within <code>&lt;main&gt;</code> is considered primary content by search engines, while <code>&lt;aside&gt;</code> content may be weighted less.</p>
+                </div>
+                
+                <h3>Essential SEO Elements</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>SEO Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;title&gt;</code></td>
+                            <td>Most important on-page SEO element</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;meta name="description"&gt;</code></td>
+                            <td>Often used as the snippet in search results</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code></td>
+                            <td>Indicates content hierarchy and importance</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;img alt="..."&gt;</code></td>
+                            <td>Helps with image search and accessibility</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;article&gt;</code></td>
+                            <td>Indicates self-contained, potentially syndicatable content</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Structured Data Example</h3>
+                <p>Combine semantic HTML with structured data (like Schema.org) for even better SEO results:</p>
+                <pre><code>&lt;article itemscope itemtype="http://schema.org/Article"&gt;
+    &lt;h1 itemprop="headline"&gt;Article Title&lt;/h1&gt;
+    &lt;div itemprop="author" itemscope itemtype="http://schema.org/Person"&gt;
+        By &lt;span itemprop="name"&gt;Author Name&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div itemprop="articleBody"&gt;
+        &lt;p&gt;Article content...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+            </article>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Semantic HTML Tutorial. All rights reserved.</p>
+        <p>Created with semantic, accessible HTML and CSS.</p>
+        <address>
+            Contact: <a href="mailto:info@semantic-html-tutorial.com">info@semantic-html-tutorial.com</a>
+        </address>
+    </footer>
+</body>
+</html>
