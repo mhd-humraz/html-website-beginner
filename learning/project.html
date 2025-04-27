@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-World Projects | Build Your Portfolio</title>
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3a0ca3;
+      --accent: #f72585;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --gray: #6c757d;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f7fa;
+      color: var(--dark);
+      padding: 0;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-bottom: 3rem;
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Project Filters */
+    .filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+    
+    .filter-btn {
+      padding: 8px 16px;
+      border: 2px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+    
+    /* Project Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 4rem;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .project-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .project-content {
+      padding: 25px;
+    }
+    
+    .project-content h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+    
+    .project-content p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .tag {
+      background: #e9ecef;
+      color: var(--dark);
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    
+    .btn:hover {
+      background: var(--secondary);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      margin-left: 10px;
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Real-World Projects</h1>
+      <p>Build your portfolio with these practical project ideas</p>
+    </div>
+  </header>
+  
+  <main class="container">
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
+      <button class="filter-btn" data-filter="javascript">JavaScript</button>
+      <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+    </div>
+    
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card" data-category="html-css">
+        <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+        <div class="project-content">
+          <h3>Personal Portfolio Website</h3>
+          <p>A responsive portfolio to showcase your work with about section, projects gallery, and contact form.</p>
+          <div class="project-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">Responsive</span>
+          </div>
+          <a href="#" class="btn">View Template</a>
+          <a href="#" class="btn btn-outline">Project Brief</a>
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="project-card" data-category="javascript">
+        <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+        <div class="project-content">
+          <h3>Task Management App</h3>
+          <p>Create a todo app with features like adding, deleting, and filtering tasks with local storage.</p>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Local Storage</span>
+            <span class="tag">DOM Manipulation</span>
+          </div>
+          <a href="#" class="btn">View Template</a>
+          <a href="#" class="btn btn-outline">Project Brief</a>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+</body>
+</html>
