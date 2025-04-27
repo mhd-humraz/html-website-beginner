@@ -70,13 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Resource links
-    document.querySelectorAll('.resource-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Resource would open in a new page or modal.');
-        });
-    });
+   
     
     // CTA button
     document.querySelector('.cta-button').addEventListener('click', function() {
