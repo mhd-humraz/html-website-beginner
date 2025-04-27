@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Exercises | Learn by Doing</title>
+  <style>
+    /* Modern styling with CSS variables */
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #4cc9f0;
+      --warning: #f72585;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      background-color: #f5f7fa;
+      color: var(--dark);
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    /* Exercise Cards */
+    .exercise {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid var(--primary);
+    }
+    
+    .exercise h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .difficulty {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+    
+    .beginner { background: #c7f9cc; color: #2b9348; }
+    .intermediate { background: #ffd6ff; color: #8338ec; }
+    .advanced { background: #ffddd2; color: #e36414; }
+    
+    .problem {
+      background: var(--light);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .problem:before {
+      content: "Problem";
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      background: var(--warning);
+      color: white;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    /* Solution Toggle */
+    .solution {
+      margin-top: 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    
+    .solution-content {
+      background: #e9ecef;
+      padding: 0 15px;
+      border-radius: 5px;
+    }
+    
+    .solution-toggle {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    
+    .solution-toggle:hover {
+      background: var(--secondary);
+    }
+    
+    .solution-toggle:after {
+      content: "↓ Show Solution";
+    }
+    
+    .solution-toggle.active:after {
+      content: "↑ Hide Solution";
+    }
+    
+    .solution.active {
+      max-height: 1000px;
+      padding: 15px 0;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 0;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Practice Exercises</h1>
+      <p>Test your skills with these hands-on challenges</p>
+    </div>
+  </header>
+  
+  <main class="container">
+    <!-- Exercise 1 -->
+    <div class="exercise">
+      <h2>HTML Structure <span class="difficulty beginner">Beginner</span></h2>
+      <div class="problem">
+        <p>Create a basic HTML5 document structure with:</p>
+        <ul>
+          <li>Proper DOCTYPE declaration</li>
+          <li>Head section with title "My First Page"</li>
+          <li>Body containing an h1 heading with "Hello World"</li>
+        </ul>
+      </div>
+      
+      <button class="solution-toggle"></button>
+      <div class="solution">
+        <div class="solution-content">
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Exercise 2 -->
+    <div class="exercise">
+      <h2>CSS Selectors <span class="difficulty intermediate">Intermediate</span></h2>
+      <div class="problem">
+        <p>Given this HTML:</p>
+        <pre><code>&lt;div class="container"&gt;
+  &lt;p class="highlight"&gt;First paragraph&lt;/p&gt;
+  &lt;p&gt;Second paragraph&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;Nested paragraph&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <p>Write CSS to:</p>
+        <ol>
+          <li>Make all paragraphs red</li>
+          <li>Make only the .highlight paragraph bold</li>
+          <li>Make the nested paragraph blue</li>
+        </ol>
+      </div>
+      
+      <button class="solution-toggle"></button>
+      <div class="solution">
+        <div class="solution-content">
+          <pre><code>/* All paragraphs */
+p {
+  color: red;
+}
+
+/* Highlight paragraph */
+.highlight {
+  font-weight: bold;
+}
+
+/* Nested paragraph */
+.container div p {
+  color: blue;
+}</code></pre>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Exercise 3 -->
+    <div class="exercise">
+      <h2>JavaScript Function <span class="difficulty advanced">Advanced</span></h2>
+      <div class="problem">
+        <p>Write a JavaScript function that:</p>
+        <ul>
+          <li>Takes an array of numbers as input</li>
+          <li>Returns the sum of all even numbers</li>
+          <li>Example: <code>sumEven([1, 2, 3, 4, 5])</code> should return 6</li>
+        </ul>
+      </div>
+      
+      <button class="solution-toggle"></button>
+      <div class="solution">
+        <div class="solution-content">
+          <pre><code>function sumEven(numbers) {
+  return numbers.reduce((sum, num) => {
+    return num % 2 === 0 ? sum + num : sum;
+  }, 0);
+}
+
+// Alternative solution:
+function sumEven(numbers) {
+  let sum = 0;
+  for (let num of numbers) {
+    if (num % 2 === 0) sum += num;
+  }
+  return sum;
+}</code></pre>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add more exercises here -->
+  </main>
+
+  <script>
+    // Toggle solution visibility
+    document.querySelectorAll('.solution-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const solution = button.nextElementSibling;
+        button.classList.toggle('active');
+        solution.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
