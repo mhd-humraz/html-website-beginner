@@ -266,7 +266,151 @@ function sumEven(numbers) {
         </div>
       </div>
     </div>
-    
+
+
+    <!-- Exercise 4 -->
+<div class="exercise">
+  <h2>HTML Lists <span class="difficulty beginner">Beginner</span></h2>
+  <div class="problem">
+    <p>Create an unordered list with three favorite fruits:</p>
+    <ul>
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Mango</li>
+    </ul>
+  </div>
+
+  <button class="solution-toggle"></button>
+  <div class="solution">
+    <div class="solution-content">
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Banana&lt;/li&gt;
+  &lt;li&gt;Mango&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- Exercise 5 -->
+<div class="exercise">
+  <h2>CSS Box Model <span class="difficulty intermediate">Intermediate</span></h2>
+  <div class="problem">
+    <p>Style a box with:</p>
+    <ul>
+      <li>Width: 300px</li>
+      <li>Padding: 20px</li>
+      <li>Border: 5px solid black</li>
+      <li>Margin: 30px</li>
+    </ul>
+  </div>
+
+  <button class="solution-toggle"></button>
+  <div class="solution">
+    <div class="solution-content">
+      <pre><code>.box {
+  width: 300px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 30px;
+}</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- Exercise 6 -->
+<div class="exercise">
+  <h2>JavaScript Array Methods <span class="difficulty advanced">Advanced</span></h2>
+  <div class="problem">
+    <p>Write a JavaScript function that:</p>
+    <ul>
+      <li>Receives an array of strings</li>
+      <li>Returns a new array with all strings converted to uppercase</li>
+      <li>Example: <code>toUpperCaseArray(["hello", "world"])</code> → <code>["HELLO", "WORLD"]</code></li>
+    </ul>
+  </div>
+
+  <button class="solution-toggle"></button>
+  <div class="solution">
+    <div class="solution-content">
+      <pre><code>function toUpperCaseArray(arr) {
+  return arr.map(str => str.toUpperCase());
+}</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- Exercise 7 -->
+<div class="exercise">
+  <h2>HTML Forms <span class="difficulty beginner">Beginner</span></h2>
+  <div class="problem">
+    <p>Create a simple form with:</p>
+    <ul>
+      <li>A text input for Name</li>
+      <li>A submit button</li>
+    </ul>
+  </div>
+
+  <button class="solution-toggle"></button>
+  <div class="solution">
+    <div class="solution-content">
+      <pre><code>&lt;form&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- Exercise 8 -->
+<div class="exercise">
+  <h2>CSS Flexbox <span class="difficulty intermediate">Intermediate</span></h2>
+  <div class="problem">
+    <p>Make a flex container that:</p>
+    <ul>
+      <li>Aligns children horizontally (row)</li>
+      <li>Spaces them evenly</li>
+      <li>Centers them vertically</li>
+    </ul>
+  </div>
+
+  <button class="solution-toggle"></button>
+  <div class="solution">
+    <div class="solution-content">
+      <pre><code>.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- Exercise 9 -->
+<div class="exercise">
+  <h2>JavaScript Event Listener <span class="difficulty advanced">Advanced</span></h2>
+  <div class="problem">
+    <p>Write JavaScript to:</p>
+    <ul>
+      <li>Alert "Button clicked!" when a button is clicked</li>
+    </ul>
+  </div>
+
+  <button class="solution-toggle"></button>
+  <div class="solution">
+    <div class="solution-content">
+      <pre><code>document.getElementById("myButton").addEventListener("click", function() {
+  alert("Button clicked!");
+});
+
+// HTML:
+// &lt;button id="myButton"&gt;Click Me&lt;/button&gt;
+</code></pre>
+    </div>
+  </div>
+</div>
+
     <!-- Add more exercises here -->
   </main>
 
