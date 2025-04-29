@@ -22,7 +22,7 @@
       <h1 class="text-2xl font-bold text-blue-600">CodeShare</h1>
       <nav class="space-x-6">
         <a href="#" class="text-gray-600 hover:text-blue-600">Home</a>
-<button onclick="openModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Share Code</button>
+      <button onclick="openModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Share Code</button>
       </nav>
     </div>
   </header>
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  
+
   <script>
     const modal = document.getElementById('uploadModal');
     const form = document.getElementById('uploadForm');
@@ -97,6 +97,13 @@
             <span class="italic">Saved</span>
             <button onclick="deleteProject(${index})" class="text-red-500 hover:underline">Delete</button>
           </div>
+          <div class="mt-2">
+            <textarea id="feedback-${index}" placeholder="Add a comment" class="w-full p-2 border rounded">${p.feedback || ''}</textarea>
+            <button onclick="submitFeedback(${index})" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Submit Feedback</button>
+            <div id="feedbackList-${index}" class="mt-3">
+              ${p.feedback ? p.feedback.map(feedback => `<p class="text-sm text-gray-600">${feedback}</p>`).join('') : ''}
+            </div>
+          </div>
         `;
         addDragEvents(card);
         feed.appendChild(card);
@@ -127,6 +134,18 @@
       });
     }
 
+    function submitFeedback(index) {
+      const feedbackInput = document.getElementById(`feedback-${index}`).value;
+      if (feedbackInput) {
+        let projects = getFromLocalStorage();
+        if (!projects[index].feedback) projects[index].feedback = [];
+        projects[index].feedback.push(feedbackInput);
+        saveToLocalStorage(projects);
+        renderProjects();
+        alert('Feedback submitted!');
+      }
+    }
+
     feed.addEventListener('dragover', (e) => {
       e.preventDefault();
       const dragging = document.querySelector('.dragging');
@@ -151,18 +170,15 @@
       const description = document.getElementById('description').value;
       const code = document.getElementById('code').value.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-      const newProject = { title, description, code };
-      const existingProjects = getFromLocalStorage();
-      existingProjects.push(newProject);
-      saveToLocalStorage(existingProjects);
-
+      let projects = getFromLocalStorage();
+      projects.push({ title, description, code, feedback: [] });
+      saveToLocalStorage(projects);
       renderProjects();
       closeModal();
       form.reset();
     });
 
-    // Load projects on page load
-    document.addEventListener('DOMContentLoaded', renderProjects);
+    renderProjects();
   </script>
 </body>
 </html>
