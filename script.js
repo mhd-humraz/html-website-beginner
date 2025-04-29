@@ -63,12 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    // Community buttons
-    document.querySelectorAll('.community-button').forEach(button => {
-        button.addEventListener('click', function() {
-            alert('Community feature coming soon!');
-        });
-    });
+    
     
    
     
