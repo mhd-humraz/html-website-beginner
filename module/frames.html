@@ -237,11 +237,22 @@
         </div>
 
 
+<textarea id="editor" rows="10" cols="50">
+<h1>Hello, World!</h1>
+<p>Edit me!</p>
+</textarea>
+<br>
+<button onclick="runCode()">Run</button>
+<iframe id="output" style="width:100%; height:200px;"></iframe>
 
-        <iframe height="300" style="width: 100%;" scrolling="no" title="Basic HTML Example"
-src="https://codepen.io/team/codepen/embed/preview/PNaGbb" frameborder="no"
-loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<script>
+function runCode() {
+  const code = document.getElementById('editor').value;
+  const iframe = document.getElementById('output');
+  iframe.contentDocument.body.innerHTML = code;
+}
+</script>
+
 
         
         <div class="section">
