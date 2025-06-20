@@ -61,6 +61,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    async function sendMessage() {
+  const input = document.getElementById("userInput").value;
+
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer YOUR_OPENAI_API_KEY"
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: input }]
+    })
+  });
+
+  const data = await response.json();
+  const reply = data.choices[0].message.content;
+  document.getElementById("chat-output").innerHTML += `<p><b>You:</b> ${input}</p><p><b>AI:</b> ${reply}</p>`;
+}
+
     
     
     
